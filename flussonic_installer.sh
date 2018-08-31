@@ -9,9 +9,13 @@ printf "
 /_/   /_/\__,_/____/____/\____/_/ /_/_/\___/  
                                          -r00t       
 
+
 This installer is for ubuntu/debian distros only. Execute with root permission.
 After installation update your license key in ' /etc/flussonic/license.txt' file.
-Feel free to use, edit, redistribute, and credit the author.
+Feel free to use, edit, redistribute, and credit this stupid author.
+
+HAPPY STREAMING!!
+
 "
 wget -q -O - http://debian.erlyvideo.org/binary/gpg.key | apt-key add -;
 echo "deb http://debian.erlyvideo.org binary/" > /etc/apt/sources.list.d/erlyvideo.list;

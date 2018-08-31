@@ -28,5 +28,3 @@ echo $license >> /etc/flussonic/license.txt
 /etc/init.d/flussonic restart;
 status=`/etc/init.d/flussonic status`;
 echo $status;
-
-END

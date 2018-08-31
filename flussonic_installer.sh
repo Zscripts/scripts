@@ -21,7 +21,7 @@ echo "deb http://debian.erlyvideo.org binary/" > /etc/apt/sources.list.d/erlyvid
 apt-get update;
 apt-get -y install flussonic flussonic-ffmpeg flussonic-python;
 
-printf "For a trial registration go to https://flussonic.com/prices/mediaserver"
+printf "For a trial registration go to https://flussonic.com/prices/mediaserver";
 read -p "Please enter your license key : " license;
 echo $license >> /etc/flussonic/license.txt;
 sudo chmod 644 /etc/flussonic/license.txt;

@@ -11,7 +11,7 @@ printf "
 
 
 This installer is for ubuntu/debian distros only. Execute with root permission.
-Feel free to use, edit, redistribute, and credit the author.
+Feel free to use, edit, redistribute, and credit this stupid author.
 
 HAPPY STREAMING!!
 

@@ -22,8 +22,9 @@ apt-get update;
 apt-get -y install flussonic flussonic-ffmpeg flussonic-python;
 
 printf "For a trial registration go to https://flussonic.com/prices/mediaserver"
-read -p "Please enter your license key : " license
-echo $license >> /etc/flussonic/license.txt
+read -p "Please enter your license key : " license;
+echo $license >> /etc/flussonic/license.txt;
+sudo chmod 644 /etc/flussonic/license.txt;
 
 /etc/init.d/flussonic restart;
 status=`/etc/init.d/flussonic status`;

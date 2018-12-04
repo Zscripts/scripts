@@ -19,7 +19,7 @@ Before running this script make sure that your system is upgraded.
 Execute with root privileges.
 This script will generate 61 users with random passwords and pam user/pass only authentication.
 "
-
+pwd_mkdb /etc/master.passwd;
 sudo pkg -y install openvpn;
 mkdir /usr/local/etc/openvpn;
 cp -r /usr/local/share/easy-rsa /usr/local/etc/openvpn/easy-rsa;
@@ -45,7 +45,7 @@ push "redirect-gateway local def1"
 push "dhcp-option DNS 8.8.8.8"
 push "dhcp-option DNS 8.8.4.4" 
 
-" >> /usr/local/etc/openvpn/openvpn.conf;
+" > /usr/local/etc/openvpn/openvpn.conf;
 
 cd /usr/local/etc/openvpn/easy-rsa;
 ./easyrsa.real init-pki;
@@ -66,14 +66,14 @@ sysrc openvpn_enable="YES";
 sysrc openvpn_if="tun";
 service openvpn start;
 
+read -p 'Enter number of users: ' users;
 
-echo "foreach n (`seq -f 'egg%04g' 0 60`)
+
+echo "foreach n (`seq -f 'egg%04g' 1 $users`)
     pw useradd $n -s /sbin/nologin -w random
 end" >> pwuser.csh;
+
+set -x
 csh pwuser.csh;
 
-printf"If you face errors in user creation, removed old users from /etc/passwd /etc/master.pass.
-resync using command 'pwd_mkdb /etc/master.passwd' and run userpw.csh afterwards
-"
 
-END

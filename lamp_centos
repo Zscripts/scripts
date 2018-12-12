@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#install apache
+sudo yum install httpd;
+#enable and start apache service
+sudo systemctl enable httpd.service && sudo systemctl start httpd.service;
+#install MySQL
+sudo yum install mariadb-server mariadb;
+#enable and start database
+sudo systemctl enable mariadb.service && sudo systemctl start mariadb;
+#secure database installation
+sudo mysql_secure_installation;
+#install php
+sudo yum install php php-mysql php-common php-opcache php-mcrypt php-cli php-gd php-curl;
+#restart apache service
+sudo systemctl restart httpd.service;
+
+
